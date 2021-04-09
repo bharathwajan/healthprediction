@@ -15,11 +15,10 @@ numpy
 
 steps to implement
 
-1) create a project in django 
-2) create a application
-3) copy and paste staic files
+1)download the project 
 4)connect to server(here i am using postgres you can use whatever you want)
 5)configure settings.py file according to your server
 6)launch server and enjoy the application
+
  
  
