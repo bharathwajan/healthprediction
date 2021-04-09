@@ -1,0 +1,6 @@
+,disease,A generalised hair thinning,"A round, flat patch of itchy skin","Dry, lusterless hair that are sparse and easily pluckable",Fever,"Hair colour changes from dark to brown or red, brown to blond",Hair loss that is temporary,Itching,Losing hair that has white bulb and lack of shiny sheath,Noticeable hair loss during washing or combing hair,Raised dots on your skin and redness in that area,Stabbing or shooting pain,Tingling in or under your skin,Upset stomach,chills,"dry, scaly, flaky skin",headache,patches that may be redder on the outside edges or resemble a ring,"red rash on penis,wrist,area between the fingers",scaly patches,skin that appears darkened or leathery,skin that burns,skin redness,"swelling, especially in the eyes, face, or groin areas"
+0,Scabies,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+1,Telogen Effluvium(stress caused hairloss),1,0,1,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+2,contact dermatitis,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,1
+3,ring worm ,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0
+4,shingles,0,0,0,1,0,0,1,0,0,1,1,1,1,1,0,1,0,0,0,0,0,0,0

@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Health Prediction</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo"> <a href="index.html"><img src="{% static 'images/logo.jpg' %}" alt="#"></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li> <a href="index.html ">Home</a> </li>
+                <li> <a href="aboutus.html ">About us</a> </li>
+                
+                <li class="active "> <a href="login.html ">Login</a> </li>
+                
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end header inner --> 
+</header>
+<!-- end header -->
+<div class="Contact-bg ">
+  <div class="container ">
+    <div class="row ">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+        <div class="abouttitle ">
+         <h2>Register</h2>
+       </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+<div class="Contact ">
+  <div class="container ">
+    
+    <div class="row" >
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+        <form action="registernew" method="post">
+          {% csrf_token %}
+          <div class="row justify-content-md-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+          {% for message in messages %}
+          <h5 style="color: red;">{{message}}</h5>
+          {% endfor %}
+          <input class="form-control"  placeholder="First name "name="first_name" ><br />
+          <input class="form-control"  placeholder="last name "name="last_name" ><br />
+          <input class="form-control"  placeholder="Email" name="email"  ><br />
+          <input class="form-control" placeholder="Password" name="password" type="password"><br />
+          <input class="form-control" placeholder="confirm Password" name="confirm_password" type="password"><br />
+          <button style="align-items: center;" class="send-btn" type="submit">Register</button><br />
+      
+          </div>
+          </div>
+        </form>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+
+<!-- footer -->
+<footer>
+  <div class="footer ">
+    <div class="container ">
+      <div class="row ">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+          <div class="JJcoach ">
+            <h3>Health Prediction <strong class="coa "> </strong></h3>
+            </div>
+        
+          </div>
+          
+        
+      </div>
+      <div class="row pdn-top-30 ">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/location.png' %}"> <span>Tamil Nadu<br>India</span></li>
+              
+              
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/tellephone.png' %}"><span>+91 8825971301<br><br></span></li>
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/email.png' %}"><span>rbw1906@gmail.com<br><br></span></li>
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <a href="# "><img src="{% static 'icon/facebook.png' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/Twitter.png' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/linkedin.png' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/google+.png' %}"></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright ">
+    <div class="container ">
+      <p></a></p>
+    </div>
+  </div>
+</footer>
+<!-- end footer --> 
+<!-- Javascript files--> 
+<script src="{% static 'js/jquery.min.js' %}"></script> 
+<script src="{% static 'js/popper.min.js' %}"></script> 
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> 
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script> 
+<script src="{% static 'js/plugin.js' %}"></script> 
+
+<!-- sidebar --> 
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script> 
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
