@@ -96,7 +96,7 @@ def result_prediction(request):
     print(request.POST)
     #print(length)
     user_choice=[]
-    for symp in range(0,length-1):# it only work for eye disease
+    for symp in range(0,length-1):
         symp=request.POST[str(symp)]
         user_choice.append(symp)
     #print(user_choice)
@@ -107,7 +107,7 @@ def result_prediction(request):
     
     
     #creating path for prediction class
-    user_choice=list(map(int,user_choice))
+    user_choice=list(map(int,user_choice)) # this line changes string to integer
     print(user_choice,len(user_choice))
     pred=prediction()
 

@@ -17,9 +17,9 @@ class connect(models.Model):
 
 
 class file():
-    general=pd.read_excel('D:/project/new/site/General.xlsx')
-    eye=pd.read_excel('D:/project/new/site/eye.xlsx')
-    skin=pd.read_excel('D:/project/new/site/skin.xlsx')
+    general=pd.read_excel('C:/Users/rbw19/healthprediction/firstpage/General.xlsx'  )
+    eye=pd.read_excel('C:/Users/rbw19/healthprediction/firstpage/eye.xlsx')
+    skin=pd.read_excel('C:/Users/rbw19/healthprediction/firstpage/skin.xlsx')
 
     #ONE HOT ENCODING 
 

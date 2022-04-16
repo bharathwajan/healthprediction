@@ -21,7 +21,7 @@
     <!-- Responsive-->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- fevicon -->
-    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
     <!-- Tweaks for older IEs-->
@@ -55,120 +55,173 @@
                             <div class="limit-box">
                                 <nav class="main-menu">
                                     <ul class="menu-area-main">
-                                        <li> <a href="index.html ">Home</a> </li>
-                <li> <a href="aboutus.html ">About us</a> </li>
-                
-                
-                <li class="active "> <a href="login.html ">Login</a> </li>
-                
-                
-              </ul>
-            </nav>
-          </div>
+                                        <li> 
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li> 
+                                            <a href="aboutus.html">About us</a>
+                                        </li>
+                                        {% if user.is_authenticated %}
+                                        <li> 
+                                            <a>hello,{{user.first_name}}</a>
+                                        </li>
+                                        <li> 
+                                            <a href="logout">Logout</a>
+                                        </li>
+                                        
+
+                                    
+                                        {% else %}
+                                        <li> 
+                                            <a href="login.html">Login</a>
+                                        </li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <!-- end header inner --> 
-</header>
-<!-- end header -->
-<div class="Contact-bg ">
-  <div class="container ">
-    <div class="row ">
-       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-        <div class="abouttitle ">
-         <h2>LOGIN</h2>
-       </div>
-       </div>
-    </div>
-  </div>
-</div>
+        <!-- end header inner -->
+    </header>
+    <!-- end header -->
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src='{% static "images/banner.jpg" %}' alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>Hello <br><strong class="cur">Welcome to Virtual Health Care</strong></h1>
+                            <span>We can help you predicting disease and show some specialized hospitals based on disease predicted. </span>
+                            <p>Technology holds great potential for improvements in the field of health care used <br> in intelligent environments, with homes becoming the centers for proactive health <br> care. Virtual health care systems at home can be used to provide such solutions.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="second-slide" src='{% static "images/banner.jpg" %}' alt="Second slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>Hello <br><strong class="cur">Welcome to Virtual Health Care</strong></h1>
+                            <span>We can help you predicting disease and show some specialized hospitals based on disease predicted.</span>
+                            <p> A technology-assisted Virtual health care system would enable elderly people to <br> lead their independent lifestyle away from hospitals and also avoid having <br> expensive caregivers.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
 
-<div class="Contact ">
-  <div class="container ">
-    
-    <div class="row" >
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
-        <form action='newlogin' method='post'>
-          {% csrf_token %}
-          <div class="row justify-content-md-center">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-          {% for message in messages %}
-          <h5 style="color: red;">{{message}}</h5>
-          {% endfor %}
-          <input class="form-control"  placeholder="Email " name="emailid" ><br />
-          <input class="form-control" placeholder="Password" type="password" name='password'>
-          <button style="margin: 0;position: absolute;top: 100%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);" class="send-btn" type="submit">LOGIN</button><br />
-          </div>
-          </div>
-        </form>
-      </div>
+    </section>
+
+    <!-- about -->
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <div class="aboutheading">
+                        <h2>About Us</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aboutimg">
+                        <figure><img src="{% static 'images/about.jpg' %}" alt="img" /></figure>
+                        <p>Identification of disease is an important but a complex task that needs to be performed very minutely, efficiently and the correct automation would be very desirable. Every human being can not be</p>
+                        <a  href="aboutus.html">read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <a style="margin: 0;position: absolute;top: 86%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);" href="register.html">new user?Register</a> 
-</div>
+<br><br><br>
 
 
-<!-- footer -->
-<footer>
-  <div class="footer ">
-    <div class="container ">
-      <div class="row ">
+    <!-- end about -->
+    <!-- Coach -->
+    <!-- end service -->
+
+
+    <!-- state abouts -->
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+            <div class="row ">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
           <div class="JJcoach ">
-            <h3>Health Prediction<strong class="coa "> </strong></h3>
+            <h3>Health Prediction <strong class="coa "> </strong></h3>
             </div>
         
           </div>
           
         
       </div>
-      <div class="row pdn-top-30 ">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
-          <ul class="location_icon ">
-              <li> <img src="{% static 'icon/location.png ' %}"> <span>Tamil Nadu<br>India</span></li>
-              
-              
-            </ul>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
-          <ul class="location_icon ">
-              <li> <img src="{% static 'icon/tellephone.png ' %}"><span>+91 8825971301<br>+91 7448621448<br>+91 7010768670</span></li>
-            </ul>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
-          <ul class="location_icon ">
-              <li> <img src="{% static 'icon/email.png ' %}"><span>rbw1906@gmail.com<br>jeevarathinamsubash@gmail.com<br>padmanaban179@gmail.com</span></li>
-            </ul>
-        </div>
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
-          <ul class="location_icon ">
-              <li> <a href="# "><img src="{% static 'icon/facebook.png' %}"></a></li>
-              <li> <a href="# "><img src="{% static 'icon/Twitter.png ' %}"></a></li>
-              <li> <a href="# "><img src="{% static 'icon/linkedin.png ' %}"></a></li>
-              <li> <a href="# "><img src="{% static 'icon/google+.png ' %}"></a></li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="copyright ">
-    <div class="container ">
-      <p>Copyright 2021 All Right Reserved By Bharathwajan , Jeevarathinam & Padmabanan</a></p>
-    </div>
-  </div>
-</footer>
-<!-- end footer --> 
-<!-- Javascript files--> 
-<script src="{% static 'js/jquery.min.js ' %}"></script> 
-<script src="{% static 'js/popper.min.js ' %}"></script> 
-<script src="{% static 'js/bootstrap.bundle.min.js  ' %}"></script> 
-<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script> 
-<script src="{% static 'js/plugin.js ' %}"></script> 
+                <div class="row pdn-top-30">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <ul class="location_icon">
+                            <li> <img src="{% static 'icon/location.png' %}"> <span>Tamil Nadu<br>India</span></li>
 
-<!-- sidebar --> 
-<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js ' %}"></script> 
-<script src="{% static 'js/custom.js ' %}"></script>
+
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <ul class="location_icon">
+                            <li> <img src="{% static 'icon/tellephone.png' %}"><span>+91 8825971301<br>+91 7448621448<br>+91 7010768670</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <ul class="location_icon">
+                            <li> <img src="{% static 'icon/email.png' %}"><span>rbw1906@gmail.com<br>jeevarathinamsubash@gmail.com<br>padmanaban179@gmail.com</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                        <ul class="location_icon">
+                            <li> <a href="#"><img src="{% static 'icon/facebook.png' %}"></a></li>
+                            <li> <a href="#"><img src="{% static 'icon/Twitter.png' %}"></a></li>
+                            <li> <a href="#"><img src="{% static 'icon/linkedin.png' %}"></a></li>
+                            <li> <a href="#"><img src="{% static 'icon/google+.png' %}"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright 2021 All Right Reserved By Bharathwajan , Jeevarathinam & Padmabanan</p>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="{%static 'js/jquery.min.js'%}"></script>
+    <script src="{%static 'js/popper.min.js'%}"></script>
+    <script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{%static 'js/jquery-3.0.0.min.js'%}"></script>
+    <script src="{%static 'js/plugin.js'%}"></script>
+
+    <!-- sidebar -->
+    <script src="{%static 'js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+    <script src="{%static 'js/custom.js'%}"></script>
 </body>
+
 </html>
