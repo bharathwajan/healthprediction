@@ -1,257 +1,174 @@
 {% load static %}
-{% static 'images' as image_path %}
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Volunteer Sign up form</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-      html, body {
-      min-height: 100%;
-      }
-      body, div, form, input, select, textarea, label, p { 
-      padding: 0;
-      margin: 0;
-      outline: none;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 14px;
-      color: #666;
-      line-height: 22px;
-      }
-      h1 {
-      position: absolute;
-      margin: 0;
-      font-size: 40px;
-      color: #fff;
-      z-index: 2;
-      line-height: 83px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      form {
-      width: 100%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 8px  #669999; 
-      }
-      .banner {
-      position: relative;
-      height: 300px;
-      background-image: url("/uploads/media/default/0001/02/8070c999efd1a155ad843379a5508d16f544aeaf.jpeg");  
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      }
-      .banner::after {
-      content: "";
-      background-color: rgba(0, 0, 0, 0.3); 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      }
-      input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      }
-      input {
-      width: calc(100% - 10px);
-      padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #669999;
-      }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 3px 0  #669999;
-      color: #669999;
-      }
-      .item {
-      position: relative;
-      margin: 10px 0;
-      }
-      .item span {
-      color: red;
-      }
-      .week {
-      display:flex;
-      justfiy-content:space-between;
-      }
-      .colums {
-      display:flex;
-      justify-content:space-between;
-      flex-direction:row;
-      flex-wrap:wrap;
-      }
-      .colums div {
-      width:48%;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color:  #a3c2c2;
-      }
-      .item i {
-      right: 1%;
-      top: 30px;
-      z-index: 1;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio {
-      position: relative;
-      display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
-      }
-      .question-answer label {
-      display: block;
-      }
-      label.radio:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      }
-      input[type=radio]:checked + label:before, label.radio:hover:before {
-      border: 2px solid  #669999;
-      }
-      label.radio:after {
-      content: "";
-      position: absolute;
-      top: 6px;
-      left: 5px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid  #669999;
-      border-top: none;
-      border-right: none;
-      transform: rotate(-45deg);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after {
-      opacity: 1;
-      }
-      .flax {
-      display:flex;
-      justify-content:space-around;
-      }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background:  #669999;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background:  #a3c2c2;
-      }
-      @media (min-width: 568px) {
-      .name-item, .city-item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, .name-item div {
-      width: calc(50% - 20px);
-      }
-      .name-item div input {
-      width:97%;}
-      .name-item div label {
-      display:block;
-      padding-bottom:5px;
-      }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="testbox">
-      <form action="/">
-        <div class="banner">
-            <img src="smiley.gif" alt="Smiley face" width="42" height="42" style="vertical-align:bottom">
-        </div>
-        <br/>
-        <p>some lines about text summarizer</p>
-        <br/>
-        <div class="colums">
-          
-        </div>
-        <div class="question">
-          
-        </div>
-        <div class="week">
-          <div class="question">
-            
-          </div>
-          <div class="question">
-            <label></label>
-            <div class="question-answer">
-              
-            </div>
-          </div>
-        </div>
+<html lang="en">
 
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Health Prediction</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- style css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- fevicon -->
+    <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
 
-        <form  action="get_news" method='post'>
-          {% csrf_token %}
-            <div class="item">
-              <label for="visit">News</label>
-                <textarea id="visit" rows="3" name="ori_news"></textarea>
-                <div class="btn-block">
-                  <button type="submit">Submit</button>
-                </div>
-            </div>
-        <!-- output text box -->
-          <div class="item">
-              <label for="visit">Summary</label>
-              <textarea id="visit" rows="3">{hello}</textarea>
-          </div>
-          <div class="question">
-          <label></label>
-        </form>
-
-          </div>
-        </div>
-        
-      </form>
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
     </div>
-  </body>
+    <!-- end loader -->
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo"> <a href="index.html"><img src="{% static 'images/logo.jpg' %}" alt="#"></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                            <div class="limit-box">
+                                <nav class="main-menu">
+                                    <ul class="menu-area-main">
+                                        <li> <a href="index.html ">Home</a> </li>
+                <li> <a href="aboutus.html ">About us</a> </li>
+                
+                
+                <li class="active "> <a href="login.html ">Login</a> </li>
+                
+                
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- end header inner --> 
+</header>
+<!-- end header -->
+<div class="Contact-bg ">
+  <div class="container ">
+    <div class="row ">
+       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+        <div class="abouttitle ">
+         <h2>LOGIN</h2>
+       </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+<div class="Contact ">
+  <div class="container ">
+    
+    <div class="row" >
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+        <form action='newlogin' method='post'>
+          {% csrf_token %}
+          <div class="row justify-content-md-center">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
+          {% for message in messages %}
+          <h5 style="color: red;">{{message}}</h5>
+          {% endfor %}
+          <input class="form-control"  placeholder="Email " name="emailid" ><br />
+          <input class="form-control" placeholder="Password" type="password" name='password'>
+          <button style="margin: 0;position: absolute;top: 100%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);" class="send-btn" type="submit">LOGIN</button><br />
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <a style="margin: 0;position: absolute;top: 86%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);" href="register.html">new user?Register</a> 
+</div>
+
+
+<!-- footer -->
+<footer>
+  <div class="footer ">
+    <div class="container ">
+      <div class="row ">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+          <div class="JJcoach ">
+            <h3>Health Prediction<strong class="coa "> </strong></h3>
+            </div>
+        
+          </div>
+          
+        
+      </div>
+      <div class="row pdn-top-30 ">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/location.png ' %}"> <span>Tamil Nadu<br>India</span></li>
+              
+              
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/tellephone.png ' %}"><span>+91 8825971301<br>+91 7448621448<br>+91 7010768670</span></li>
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <img src="{% static 'icon/email.png ' %}"><span>rbw1906@gmail.com<br>jeevarathinamsubash@gmail.com<br>padmanaban179@gmail.com</span></li>
+            </ul>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 ">
+          <ul class="location_icon ">
+              <li> <a href="# "><img src="{% static 'icon/facebook.png' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/Twitter.png ' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/linkedin.png ' %}"></a></li>
+              <li> <a href="# "><img src="{% static 'icon/google+.png ' %}"></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright ">
+    <div class="container ">
+      <p>Copyright 2021 All Right Reserved By Bharathwajan , Jeevarathinam & Padmabanan</a></p>
+    </div>
+  </div>
+</footer>
+<!-- end footer --> 
+<!-- Javascript files--> 
+<script src="{% static 'js/jquery.min.js ' %}"></script> 
+<script src="{% static 'js/popper.min.js ' %}"></script> 
+<script src="{% static 'js/bootstrap.bundle.min.js  ' %}"></script> 
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script> 
+<script src="{% static 'js/plugin.js ' %}"></script> 
+
+<!-- sidebar --> 
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js ' %}"></script> 
+<script src="{% static 'js/custom.js ' %}"></script>
+</body>
 </html>
